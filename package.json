@@ -1,0 +1,31 @@
+{
+  "name": "productive-box",
+  "version": "1.2.0",
+  "description": "Are you an early 🐤 or a night 🦉? Let's check out in gist",
+  "author": "maxam2017",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "preinstall": "./preinstall.sh",
+    "dev": "node --loader ts-node/esm src/index.ts",
+    "build": "tsc && ncc build dist/index.js --minify && find dist/ -type f -not -name 'index.js' -delete",
+    "lint": "biome lint"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.0.2",
+    "dotenv": "^16.4.4"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^18.18.7",
+    "@vercel/ncc": "^0.38.1",
+    "semantic-release": "^23.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
